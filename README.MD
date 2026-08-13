@@ -29,7 +29,7 @@ logger/
 │ └── Logger.h # Основной класс логгера
 ├── src/
 │ ├── Logger.cpp
-│ ├── FileLogTarget.cpp
+│ └── FileLogTarget.cpp
 ├── examples/
 │ └── main.cpp # Пример использования
 ├── tests/
