@@ -20,22 +20,25 @@
 ---
 
 ## 📂 Структура проекта
+
+```text
 logger/
 ├── include/
-│ └── logger/
-│ ├── LogLevel.h # Перечисление уровней важности
-│ ├── ILogTarget.h # Абстрактный интерфейс приёмника лога
-│ ├── FileLogTarget.h # Реализация: запись в файл
-│ └── Logger.h # Основной класс логгера
+│   └── logger/
+│       ├── LogLevel.h          # Перечисление уровней важности
+│       ├── ILogTarget.h        # Абстрактный интерфейс приёмника лога
+│       ├── FileLogTarget.h     # Реализация: запись в файл
+│       └── Logger.h            # Основной класс логгера
 ├── src/
-│ ├── Logger.cpp
-│ └── FileLogTarget.cpp
+│   ├── Logger.cpp
+│   └── FileLogTarget.cpp
 ├── examples/
-│ └── main.cpp # Пример использования
+│   └── main.cpp                # Пример использования
 ├── tests/
-│ └── test_logger.cpp # Модульные тесты (GoogleTest)
+│   └── test_logger.cpp         # Модульные тесты (GoogleTest)
 ├── CMakeLists.txt
 └── README.md
+```
 
 ## Быстрый старт
 git clone <repository-url>
