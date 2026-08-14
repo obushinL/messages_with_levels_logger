@@ -13,14 +13,14 @@ set(LOGGER_SOURCES
 # Статическая библиотека
 add_library(logger_static STATIC ${LOGGER_SOURCES})
 target_include_directories(logger_static PUBLIC 
-    ${CMAKE_CURRENT_SOURCE_DIR}/logger/include  # ✅ Правильный путь!
+    ${CMAKE_CURRENT_SOURCE_DIR}/logger/include  
 )
 set_target_properties(logger_static PROPERTIES OUTPUT_NAME logger)
 
 # Динамическая библиотека
 add_library(logger_shared SHARED ${LOGGER_SOURCES})
 target_include_directories(logger_shared PUBLIC 
-    ${CMAKE_CURRENT_SOURCE_DIR}/logger/include  # ✅ Правильный путь!
+    ${CMAKE_CURRENT_SOURCE_DIR}/logger/include  
 )
 set_target_properties(logger_shared PROPERTIES OUTPUT_NAME logger)
 
