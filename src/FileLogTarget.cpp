@@ -2,7 +2,6 @@
 
 namespace logger
 {
-    // constructor
     FileLogTarget::FileLogTarget(const std::string &fileName) : m_fileName(fileName)
     {
         // open file m_fileName, open for output, append text

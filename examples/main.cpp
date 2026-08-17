@@ -1,25 +1,15 @@
 #include <iostream>
-#include <memory>
-
 #include "logger/Logger.h"
 
-int main(int argc, char **argv)
-{
+int main(int argc, char** argv) {
     using namespace logger;
+    const std::string file = (argc > 1) ? argv[1] : "log.txt";
 
-    const std::string fileName = (argc > 1) ? argv[1] : "log.txt";
-
-    Logger fileLogger(fileName, LogLevel::Info);
-    if (!fileLogger.isValid())
-    {
-        std::cerr << "Logger init error "
-                  << fileLogger.lastError() << std::endl;
+    Logger log(file, LogLevel::Info);
+    if (!log.isValid()) {
+        std::cerr << "Init error: " << log.lastError() << "\n";
         return 1;
     }
-
-    fileLogger.set_level(LogLevel::Debug);
-    fileLogger.debug("Теперь отладочные сообщения записываются");
-
-    
+    log.info("Пример: библиотека подключена и работает");
     return 0;
 }
