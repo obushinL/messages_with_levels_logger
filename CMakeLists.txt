@@ -12,6 +12,10 @@ set(LOGGER_SOURCES
 find_package(Threads REQUIRED)
 
 add_library(logger_static STATIC ${LOGGER_SOURCES})
+target_include_directories(logger_static PUBLIC 
+    ${CMAKE_CURRENT_SOURCE_DIR}/logger/include  
+)
+set_target_properties(logger_static PROPERTIES OUTPUT_NAME logger)
 target_include_directories(logger_static PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/logger/include)
 target_link_libraries(logger_static PUBLIC Threads::Threads)
@@ -20,6 +24,14 @@ set_target_properties(logger_static PROPERTIES
     ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/static)
 
 add_library(logger_shared SHARED ${LOGGER_SOURCES})
+target_include_directories(logger_shared PUBLIC 
+    ${CMAKE_CURRENT_SOURCE_DIR}/logger/include  
+)
+set_target_properties(logger_shared PROPERTIES OUTPUT_NAME logger)
+
+# Подключаем Threads
+find_package(Threads REQUIRED)
+target_link_libraries(logger_static PUBLIC Threads::Threads)
 target_include_directories(logger_shared PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/logger/include)
 target_link_libraries(logger_shared PUBLIC Threads::Threads)
