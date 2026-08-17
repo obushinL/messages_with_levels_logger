@@ -25,27 +25,28 @@
 ---
 
 ## Структура проекта
-
-├── logger/
-│ └── include/
-│ └── logger/
-│ ├── LogLevel.h # Перечисление уровней важности
-│ ├── LogTarget.h # Абстрактный интерфейс приёмника лога
-│ ├── FileLogTarget.h # Реализация: запись в файл
-│ └── Logger.h # Основной класс логгера
+```
+logger/
+├── include/
+│   └── logger/
+│       ├── LogLevel.h
+│       ├── LogTarget.h
+│       ├── FileLogTarget.h
+│       └── Logger.h
 ├── src/
-│ ├── Logger.cpp
-│ └── FileLogTarget.cpp
-├── app/ # Консольное многопоточное приложение (Часть 2)
-│ ├── main.cpp # Точка входа
-│ ├── message.h # Структура сообщения
-│ └── thread_queue.h # Потокобезопасная очередь
+│   ├── Logger.cpp
+│   └── FileLogTarget.cpp
+├── app/
+│   ├── main.cpp
+│   ├── message.h
+│   └── thread_queue.h
 ├── examples/
-│ └── main.cpp # Минимальный пример использования библиотеки
+│   └── main.cpp
 ├── tests/
-│ └── test_logger.cpp # Модульные тесты (GoogleTest)
+│   └── test_logger.cpp
 ├── CMakeLists.txt
 └── README.md
+```
 
 ## Быстрый старт
 ```powershell
